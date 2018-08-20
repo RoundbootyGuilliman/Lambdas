@@ -13,11 +13,9 @@ public class TaskOne {
 		
 		// sorting people
 		
-		Supplier<Person> personSupplier = () -> new Person("Tom", 30);
-		
 		Person person1 = new Person("Bob", 50);
 		Person person2 = new Person("Rob", 25);
-		Person person3 = personSupplier.get();
+		Person person3 = new Person("Tom", 30);
 		
 		Person[] people = new Person[]{person1, person2, person3};
 		
