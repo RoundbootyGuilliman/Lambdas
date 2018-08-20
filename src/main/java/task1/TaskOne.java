@@ -57,7 +57,8 @@ public class TaskOne {
 		anonymousLogger.log("Message to log");
 		lambdaLogger.log("Message to log");
 		
-		
+		anonymousLogger.defaultHello();
+		Logger.staticHello();
 		
 		
 		// Runnable
@@ -86,7 +87,6 @@ public class TaskOne {
 		
 		thread.start();
 		thread1.start();
-		
 	}
 	
 	private static int plus10(int number) {

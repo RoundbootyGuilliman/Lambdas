@@ -1,9 +1,6 @@
 package task2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class TaskTwo {
@@ -63,7 +60,5 @@ public class TaskTwo {
 		
 		System.out.println("All authors: " +
 				Arrays.toString(Stream.of(books).map(Book::getAuthors).distinct().toArray()));
-		
-		
 	}
 }
