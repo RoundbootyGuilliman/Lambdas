@@ -59,6 +59,6 @@ public class TaskTwo {
 		Stream.of(books).parallel().forEach(System.out::println);
 		
 		System.out.println("All authors: " +
-				Arrays.toString(Stream.of(books).map(Book::getAuthors).distinct().toArray()));
+				Arrays.toString(Stream.of(books).flatMap(book -> book.getAuthors().stream()).distinct().toArray()));
 	}
 }
