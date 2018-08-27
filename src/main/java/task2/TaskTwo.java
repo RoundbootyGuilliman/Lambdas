@@ -56,7 +56,7 @@ public class TaskTwo {
 				Arrays.toString(Stream.of(books).sorted(Comparator.comparing(Book::getTitle)).toArray()));
 		
 		System.out.println("All titles: ");
-		Stream.of(books).parallel().forEach(System.out::println);
+		Stream.of(books).parallel().map(book -> book.getTitle()).forEach(System.out::println);
 		
 		System.out.println("All authors: " +
 				Arrays.toString(Stream.of(books).flatMap(book -> book.getAuthors().stream()).distinct().toArray()));

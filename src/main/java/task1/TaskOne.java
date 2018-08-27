@@ -19,11 +19,14 @@ public class TaskOne {
 		
 		Person[] people = new Person[]{person1, person2, person3};
 		
-		Arrays.sort(people, Comparator.comparingInt(Person::getAge));
+		Arrays.sort(people, (p1, p2) -> Integer.compare(p1.getAge(), p2.getAge()));
 		System.out.println("By age: " + Arrays.toString(people));
 		
-		Arrays.sort(people, Comparator.comparing(Person::getName));
+		Arrays.sort(people, (p1, p2) -> p1.getName().compareTo(p2.getName()));
 		System.out.println("By name: " + Arrays.toString(people));
+		
+		Arrays.asList(people).forEach(System.out::println);
+		
 		
 		
 		// standard interfaces
@@ -37,7 +40,7 @@ public class TaskOne {
 		};
 		System.out.println(personPredicate.test(person2));
 		
-		Function<Integer, Integer> plus10 = TaskOne::plus10;
+		Function<Integer, Integer> plus10 = number -> number + 10;
 		System.out.println(plus10.apply(10));
 		
 		
@@ -85,9 +88,5 @@ public class TaskOne {
 		
 		thread.start();
 		thread1.start();
-	}
-	
-	private static int plus10(int number) {
-		return number + 10;
 	}
 }
